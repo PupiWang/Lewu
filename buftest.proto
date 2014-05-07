@@ -1,0 +1,34 @@
+option java_package = "com.onevo.proto";
+option java_outer_classname = "BufTestEntity";
+message BufTest {
+
+  //from和to分别代表消息来源和去向，其值是标示用户或者设备的id
+  required string from = 1; 
+  
+  //手机客户端，初始化socket后设置为client
+  //硬件客户端，初始化Socket后这是为device
+  required string to = 2;   //如用户邮箱"1@qq.com" 和 "ov_orange_01" 
+  
+   //命令标示。1：拍照；2：拍摄；3：停止拍摄；4：上线；5：下线；6 ：前进；7：后退；8：左转；9：右 转；10：修改密码后踢用户下线；11：实时视频流播放；12：视频流结束；13：布防；14：撤防；
+   
+  optional int32 cmd  = 3  ;
+  
+  //存放一些消息。1：连接，2：成功，3：失败
+  optional int32 msg = 4;
+  
+  //存放时间信息，时间数据转换成秒数的字符串
+  optional string time = 5;
+
+  optional int32 responseStatus = 6 ;
+  
+  //储存一些额外的信息
+  optional string info = 7;
+  
+  //标识用户
+  optional string socketid =8;
+
+  //流媒体服务器domain
+  optional string domain = 9;
+
+  optional string sdp = 10;
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <title>文档中心</title>
+    <style>
+      .block{
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h1>目录</h1>
+
+    <ul>
+      <li>
+        用户
+        <ul>
+          <li><a href="#login">登陆</a></li>
+          <li><a href="#signup">注册</a></li>
+          <li><a href="#sendActivationMessage">发送激活码</a></li>
+          <li><a href="#activation">激活账号</a></li>
+          <li><a href="#modify">修改密码</a></li>
+          <li><a href="#forget">忘记密码</a></li>
+          <li><a href="#resetPassword">重置密码</a></li>
+        </ul>
+      </li>
+
+      <li>
+        设备
+        <ul>
+          <li><a href="#device">获取设备列表</a></li>
+          <li><a href="#getUsersByDevice">获取用户列表</a></li>
+          <li><a href="#bindingAdmin">添加管理员</a></li>
+          <li><a href="#bindingUser">添加普通用户</a></li>
+          <li><a href="#removeUser">删除普通用户</a></li>
+          <li><a href="#modifyDeviceName">修改设备显示名</a></li>
+          <li><a href="#switchDeviceAlarm">设备报警开关</a></li>
+        </ul>
+      </li>
+
+      <li>
+        资源
+        <ul>
+          <li><a href="#picture">获取照片列表</a></li>
+          <li><a href="#video">获取视频列表</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div id="login" class="block">
+      <h3>登陆</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/login</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , password</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="signup" class="block">
+      <h3>注册</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/signup</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , password , password_confirm</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <p><code>&lt;input name="password_confirm" type="password"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><label>PasswordConfirm</label><input name="password_confirm" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="sendActivationMessage" class="block">
+      <h3>发送激活码</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/sendActivationMessage</label></p>
+      <p><label>方法：GET</label></p>
+      <p><label>参数：userId </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="activation" class="block">
+      <h3>激活账号</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/activation</label></p>
+      <p><label>方法：GET</label></p>
+      <p><label>参数：userId , e </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="e" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>e</label><input name="e" type="text" value=""></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="modify" class="block">
+      <h3>修改密码</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/modify</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , e </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="text"&gt;</code></p>
+      <p><code>&lt;input name="passwordNew" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><label>PasswordNew</label><input name="passwordNew" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="forget" class="block">
+      <h3>忘记密码</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/forget</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="resetPassword" class="block">
+      <h3>重置密码</h3>
+      <p><label>接口：http://115.29.179.7/mobile/user/resetPassword</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , passwordNew , e</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="passwordNew" type="password"&gt;</code></p>
+      <p><code>&lt;input name="e" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>passwordNew</label><input name="passwordNew" type="password" value="123456"></p>
+      <p><label>e</label><input name="e" type="text" value=""></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="device" class="block">
+      <h3>获取设备列表</h3>
+      <p><label>接口：http://115.29.179.7/mobile/device</label></p>
+      <p><label>方法：GET</label></p>
+      <p><label>参数：userId , password</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="getUsersByDevice" class="block">
+        <h3>获取用户列表</h3>
+        <p><label>接口：http://115.29.179.7/mobile/device/getUsersByDevice</label></p>
+        <p><label>方法：GET</label></p>
+        <p><label>参数：userId , password , deviceId</label></p>
+        <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+        <p><code>&lt;input name="password" type="password"&gt;</code></p>
+        <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+        <h4>示例</h4>
+        <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+        <p><label>Password</label><input name="password" type="password" value="123456"></p>
+        <p><label>deviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+        <p><button>Submit</button></p>
+        <div class="alert alert-warning">
+            <p></p>
+        </div>
+    </div>
+
+    <div id="bindingAdmin" class="block">
+      <h3>添加管理员</h3>
+      <p><label>接口：http://115.29.179.7/mobile/device/bindingAdmin</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , password , deviceId</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><label>DeviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="bindingUser" class="block">
+      <h3>添加普通用户</h3>
+      <p><label>接口：http://115.29.179.7/mobile/device/bindingUser</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , password , deviceId , userIdNew </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="userIdNew" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><label>DeviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+      <p><label>userIdNew</label><input name="userIdNew" type="text" value="2@qq.com"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="removeUser" class="block">
+      <h3>删除普通用户</h3>
+      <p><label>接口：http://115.29.179.7/mobile/device/removeUser</label></p>
+      <p><label>方法：POST</label></p>
+      <p><label>参数：userId , password , deviceId , userIdNew </label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="userIdNew" type="text"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><label>DeviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+      <p><label>userIdNew</label><input name="userIdNew" type="text" value="2@qq.com"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="modifyDeviceName" class="block">
+        <h3>修改设备显示名</h3>
+        <p><label>接口：http://115.29.179.7/mobile/device/modifyDisplayName</label></p>
+        <p><label>方法：POST</label></p>
+        <p><label>参数：userId , password , deviceId , deviceName </label></p>
+        <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+        <p><code>&lt;input name="password" type="password"&gt;</code></p>
+        <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+        <p><code>&lt;input name="deviceName" type="text"&gt;</code></p>
+        <h4>示例</h4>
+        <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+        <p><label>Password</label><input name="password" type="password" value="123456"></p>
+        <p><label>DeviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+        <p><label>deviceName</label><input name="deviceName" type="text" value="name1"></p>
+        <p><button>Submit</button></p>
+        <div class="alert alert-warning">
+            <p></p>
+        </div>
+    </div>
+
+    <div id="switchDeviceAlarm" class="block">
+        <h3>设备报警开关</h3>
+        <p><label>接口：http://115.29.179.7/mobile/device/switchDeviceAlarm</label></p>
+        <p><label>方法：POST</label></p>
+        <p><label>参数：userId , password , deviceId , deviceName </label></p>
+        <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+        <p><code>&lt;input name="password" type="password"&gt;</code></p>
+        <p><code>&lt;input name="deviceId" type="text"&gt;</code></p>
+        <p><code>&lt;input name="isAlarmOpen" type="text"&gt;</code></p>
+        <h4>示例</h4>
+        <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+        <p><label>Password</label><input name="password" type="password" value="123456"></p>
+        <p><label>DeviceId</label><input name="deviceId" type="text" value="ov_orange_01"></p>
+        <p><label>isAlarmOpen</label><input name="isAlarmOpen" type="text" value="1"></p>
+        <p><button>Submit</button></p>
+        <div class="alert alert-warning">
+            <p></p>
+        </div>
+    </div>
+
+    <div id="picture" class="block">
+      <h3>获取照片列表</h3>
+      <p><label>接口：http://115.29.179.7/mobile/resource/pictures</label></p>
+      <p><label>方法：GET</label></p>
+      <p><label>参数：userId , password</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <div id="video" class="block">
+      <h3>获取视频列表</h3>
+      <p><label>接口：http://115.29.179.7/mobile/resource/videos</label></p>
+      <p><label>方法：GET</label></p>
+      <p><label>参数：userId , password</label></p>
+      <p><code>&lt;input name="userId" type="text"&gt;</code></p>
+      <p><code>&lt;input name="password" type="password"&gt;</code></p>
+      <h4>示例</h4>
+      <p><label>UserId</label><input name="userId" type="text" value="1@qq.com"></p>
+      <p><label>Password</label><input name="password" type="password" value="123456"></p>
+      <p><button>Submit</button></p>
+      <div class="alert alert-warning">
+        <p></p>
+      </div>
+    </div>
+
+    <script src="javascripts/jquery-1.10.2.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/md5.js"></script>
+    <script>
+
+      $('#login p button').on('click', function () {
+        var userId = $('#login p [name="userId"]')[0].value,
+          password = $('#login p [name="password"]')[0].value;
+        $.post('/mobile/user/login', {'userId': userId, 'password': md5(password)}, function (data) {
+          $('#login .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#signup p button').on('click', function () {
+        var userId = $('#signup p [name="userId"]')[0].value,
+          password = $('#signup p [name="password"]')[0].value,
+          password_confirm = $('#signup p [name="password_confirm"]')[0].value;
+        $.post('/mobile/user/signup', {'userId': userId, 'password': md5(password), 'password_confirm': md5(password_confirm)}, function (data) {
+          $('#signup .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+      
+      $('#sendActivationMessage p button').on('click', function () {
+        var userId = $('#sendActivationMessage p [name="userId"]')[0].value;
+        $.get('/mobile/user/sendActivationMessage', {'userId': userId}, function (data) {
+          $('#sendActivationMessage .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#activation p button').on('click', function () {
+        var userId = $('#activation p [name="userId"]')[0].value,
+          e = $('#activation p [name="e"]')[0].value;
+        $.get('/mobile/user/activation', {'e': e, 'userId': userId}, function (data) {
+          $('#activation .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#modify p button').on('click', function () {
+        var userId = $('#modify p [name="userId"]')[0].value,
+          password = $('#modify p [name="password"]')[0].value,
+          passwordNew = $('#modify p [name="passwordNew"]')[0].value;
+        $.post('/mobile/user/modify', {'userId': userId, 'password': md5(password), 'passwordNew': md5(passwordNew)}, function (data) {
+          $('#modify .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#forget p button').on('click', function () {
+        var userId = $('#forget p [name="userId"]')[0].value;
+        $.post('/mobile/user/forget', {'userId': userId}, function (data) {
+          $('#forget .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#resetPassword p button').on('click', function () {
+        var userId = $('#resetPassword p [name="userId"]')[0].value,
+          passwordNew = $('#resetPassword p [name="passwordNew"]')[0].value,
+          e = $('#resetPassword p [name="e"]')[0].value;
+        $.post('/mobile/user/resetPassword', {'userId': userId, 'passwordNew': md5(passwordNew), 'e': e}, function (data) {
+          $('#resetPassword .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#device p button').on('click', function () {
+        var userId = $('#device p [name="userId"]')[0].value,
+          password = $('#device p [name="password"]')[0].value;
+        $.get('/mobile/device', {'userId': userId, 'password': md5(password)}, function (data) {
+          $('#device .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#getUsersByDevice p button').on('click', function () {
+          var userId = $('#getUsersByDevice p [name="userId"]')[0].value,
+            password = $('#getUsersByDevice p [name="password"]')[0].value,
+            deviceId = $('#getUsersByDevice p [name="deviceId"]')[0].value;
+          $.get('/mobile/device/getUsersByDevice', {'userId': userId, 'password': md5(password), 'deviceId': deviceId}, function (data) {
+              $('#getUsersByDevice .alert p')[0].innerHTML = JSON.stringify(data);
+          });
+      });
+
+      $('#picture p button').on('click', function () {
+        var userId = $('#picture p [name="userId"]')[0].value,
+          password = $('#picture p [name="password"]')[0].value;
+        $.get('/mobile/resource/pictures', {'userId': userId, 'password': md5(password)}, function (data) {
+          $('#picture .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#video p button').on('click', function () {
+        var userId = $('#video p [name="userId"]')[0].value,
+          password = $('#video p [name="password"]')[0].value;
+        $.get('/mobile/resource/videos', {'userId': userId, 'password': md5(password)}, function (data) {
+          $('#video .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#bindingAdmin p button').on('click', function () {
+        var userId = $('#bindingAdmin p [name="userId"]')[0].value,
+          password = $('#bindingAdmin p [name="password"]')[0].value,
+          deviceId = $('#bindingAdmin p [name="deviceId"]')[0].value;
+        $.post('/mobile/device/bindingAdmin', {'userId': userId, 'password': md5(password), 'deviceId': deviceId}, function (data) {
+          $('#bindingAdmin .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#bindingUser p button').on('click', function () {
+        var userId = $('#bindingUser p [name="userId"]')[0].value,
+          password = $('#bindingUser p [name="password"]')[0].value,
+          deviceId = $('#bindingUser p [name="deviceId"]')[0].value,
+          userIdNew = $('#bindingUser p [name="userIdNew"]')[0].value;
+        $.post('/mobile/device/bindingUser', {'userId': userId, 'password': md5(password), 'deviceId': deviceId, 'userIdNew': userIdNew}, function (data) {
+          $('#bindingUser .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#removeUser p button').on('click', function () {
+        var userId = $('#removeUser p [name="userId"]')[0].value,
+          password = $('#removeUser p [name="password"]')[0].value,
+          deviceId = $('#removeUser p [name="deviceId"]')[0].value,
+          userIdNew = $('#removeUser p [name="userIdNew"]')[0].value;
+        $.post('/mobile/device/removeUser', {'userId': userId, 'password': md5(password), 'deviceId': deviceId, 'userIdNew': userIdNew}, function (data) {
+          $('#removeUser .alert p')[0].innerHTML = JSON.stringify(data);
+        });
+      });
+
+      $('#modifyDeviceName p button').on('click', function () {
+          var userId = $('#modifyDeviceName p [name="userId"]')[0].value,
+              password = $('#modifyDeviceName p [name="password"]')[0].value,
+              deviceId = $('#modifyDeviceName p [name="deviceId"]')[0].value,
+              deviceName = $('#modifyDeviceName p [name="deviceName"]')[0].value;
+          $.post('/mobile/device/modifyDisplayName', {'userId': userId, 'password': md5(password), 'deviceId': deviceId, 'deviceName': deviceName}, function (data) {
+              $('#modifyDeviceName .alert p')[0].innerHTML = JSON.stringify(data);
+          });
+      });
+
+      $('#switchDeviceAlarm p button').on('click', function () {
+          var userId = $('#switchDeviceAlarm p [name="userId"]')[0].value,
+              password = $('#switchDeviceAlarm p [name="password"]')[0].value,
+              deviceId = $('#switchDeviceAlarm p [name="deviceId"]')[0].value,
+                  isAlarmOpen = $('#switchDeviceAlarm p [name="isAlarmOpen"]')[0].value;
+          $.post('/mobile/device/switchDeviceAlarm', {'userId': userId, 'password': md5(password), 'deviceId': deviceId, 'isAlarmOpen': isAlarmOpen}, function (data) {
+              $('#switchDeviceAlarm .alert p')[0].innerHTML = JSON.stringify(data);
+          });
+      });
+
+    </script>
+  </body>
+</html>

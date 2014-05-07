@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<meta charset="utf-8">
+		<title>乐屋首页</title>
+		<style type="text/css">
+			body{
+				padding-top: 100px;
+				background-color: #f8f8f8;
+			}
+			body,input{
+				font-family: "Hiragino Sans GB","Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+			}
+			.container{
+				text-align: center;
+			}
+			h1{
+				font-weight: 900;
+        margin-bottom: 30px;
+        font-size: 40px;
+			}
+      input{
+        width: 380px;
+        font-size: 20px;
+        margin-bottom: 6px;
+        padding: 8px;
+      }
+      #btn-login,#btn-signup{
+        width: 380px;
+        padding: 6px;
+        font-weight: bolder;
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+      #btn-login:hover,#btn-signup:hover{
+        opacity: 0.8;
+      }
+      #btn-login{
+        background-color: #ff7a4d;
+        color: #f8f8f8;
+      }
+      #btn-signup{
+        background: #ffffff;
+        color: #7c7c7c;
+        border: 1px solid #7c7c7c;
+      }
+      #other-info{
+        width: 380px;
+        margin: 0px auto;
+      }
+      input[type="checkbox"]{
+        display: inline;
+        width: 30px;
+        margin-top: 0px;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<img src="./images/logo.png"><br><br>
+
+			<H1>乐屋，您的家庭安全专家！</H1>
+
+			<input placeholder="乐屋账号/邮箱/手机号" name="email"><br>
+			<input placeholder="密码" name="password" type="password"><br>
+      <button class="btn" id="btn-login">快速登录</button><br>
+
+      <div id="other-info">
+        <input type="checkbox" id="rememberme" class="pull-left">
+        <h5><small class="pull-left">两周内自动登录</small></h5>
+        <h5><small class="pull-right">忘记密码</small></h5>
+      </div><br><br>
+
+      <a href="/signup" class="btn" id="btn-signup">注册乐屋账户</a>
+		
+    </div>
+
+		<script src="javascripts/jquery-1.10.2.min.js"></script>
+		<script src="javascripts/bootstrap.min.js"></script>
+
+    <script>
+
+    	$('#rememberme').click();
+
+      $('#btn-login').click(function(event){
+        var email = $('[name="email"]')[0].value,
+          password = $('[name="password"]')[0].value,
+          check = $('#rememberme')[0].checked;
+
+        if (email && password) {
+          $.post('/login',{'email': email, 'password': password, 'rememberme': check},function (data) {
+            if(data == '/userinfo') {
+              location.href = '/background';
+            } else {
+              alert(data);
+            }
+          })
+        } else {
+          alert('用户名或密码为空！');
+          return;
+        }
+      })
+    </script>
+	
+  </body>
+</html>
